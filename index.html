@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadoo | Travel Agency</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="forlogo">
+            <a href="#" class="logo">
+                <img src="data:image/png;base64,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" alt="Logo">
+            </a>
+        </div>
+        <div class="services">
+            <ul>
+                <li><a href="#">Destination</a></li>
+                <li><a href="#">Hotels</a></li>
+                <li><a href="#">Flights</a></li>
+                <li><a href="#">Bookings</a></li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <ul>
+                <li>
+                    <button class="button1">Login</button>
+                </li>
+                <li>
+                    <button class="button2">Signup</button>
+                </li>
+                <li>
+                    <select class="option">
+                        <option value="EN">EN</option>
+                        <option value="ITA">ITA</option>
+                        <option value="FRA">FRA</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="section1">
+        <div class="sectiondiv1">
+            <div class="textarea1">
+                <h2>BEST DESTINATIONS AROUND THE WORLD</h2>
+                <h1>Travel, enjoy and live a new and full life.</h1>
+                <p>Built Wicket longer admire do barton vantity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.</p>
+                <div class="cta">
+                    <button>Find out more</button>
+                    <div class="anim">
+                        <div>
+                            <i class="ri-play-mini-fill"></i>
+                        </div>
+                        Play Demo
+                    </div>
+                </div>
+                
+            </div>
+            <div class="imgwrap1">
+                <img src="https://jadoo-tour.vercel.app/assets/hero-img-ca36e7b0.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="section2">
+        <div class="sectiondiv2">
+            <div class="sectiondiv2-1">
+                <div class="imgwrap2">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAACrCAYAAAB2WTA0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAXASURBVHgB7d2xjhNXFAbgY+zCilaRC4otKKxoCwokKCn3EahpQt6ANwiPkDcIVZK3yJaUlCmQ2DIFiigoLPDG8cUzWeO11zjxzBzvfp80stfXaMbHvvbMneH+EQAAAAAAAAAAQPN61zXOhsPx5zuTyfv5E99HfsPqdlotXRtUSzGJHNQosTvXtn769HtMp29jMHgeh+FxtdyNHO7FYnseRR5qlNidANLQISERHRISqQ+mYxZxGv3++IvWXm+0aJw9nPX7z75ou7g4mw/0nEd3yjHQYEPbaM1j76LZQYzhmvUeVbdlO49X2soARtMDZWp0YP4dZZ13uJfzDvj9V//L2eyH3sXFy+hOGQQY7fD819Hsm1u2ZZeBibItr6NZanRg7LLCoZj/ar6dDQaz+fIiDsNptRxHDuNYbM/jyOM01Cgtv5CQiA4JieiQkMjg2tZe73w+mlpGVA9l6Lm+FjLDNZpF2Y5J5LpGU40AAAAAAAAAAAAAAAAAAAAAgJuqH80r09l/W93/GN0r09mXbSpT2H+IHNRou2w1asQgmncSizf4PHK8uWU6+/vV/T8jBzXaLluNGmEaSEhEh4REdEhIZN/HkCXAZbRhHeWgfLjSVo5PmpyEuaz7ZOWx5W24v9JWJu19E81So+2y1ag1++6QpYibUpWO4jKcs9Z0EdeFgC5bFxDa9IdNjbbLVqPW7LtD1tPCLxsutU3XPL9pq9sziMvXPdny3Cao0XYZa9SKXjSv5P7Vw9Xn0b3yzVvvhp1FDmq0XbYaNcKgDiSiQ0IiOiQk0salc++q9WS53KkMFmS5HKymRttlqxEAAAAAAAAAAAAAAAAAAAAAAAAA7KiNKIF1SlhKmdKvZDK0Oa1fvd5JtJNR8d89mY0Gw3hU7k5/651FfsO4zN/IEn5TJ2jlf78rbczLuk6JPyvFKnN//hHteRAHkg/R/yaezG9+rv7s6otzFyUPZByLD/6ryOFRdVs+Y9nmmV3LzOWQiA4JieiQkEgbx5Algno18bY++C+Pj1faSobDPgZ61q23fr2jBte7u2fzAZyP8Xzl0Yf1ncHT2Yvlht4s3n/6tfdTdKe8f6sJx/UASqnxeKWtjayQ47gadV7bFIOebqCnrQ65Szx1KdK+OuSm9Y7iaob9vta7u8l8W+7Ej9c844u2v3ufB6S67pDjDW3rOmQZdW2jQ442tN2tlmVlm25lh+wqnvqgYrFnV0d9R73qA7baNv+FPI9uravtdTHobcWy7/J+p9TVcHoZju7itMfBxGL3n86e9arTHtNfeodw2mMc+U57nFa3TnsAu9MhIREdEhLp6tK5Dyu3ba73MK5rnJ/amH9dnsXhKDXNNnJZX1N7ENexAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsHELM2f9Vou9KBF1JSH4T3SvBoSfV/deRY5p7NUqiq2yPNg2rJctrLdsxjFzUKAnpV5CIDgmJ3LRd1uWc+3Vtq7tBbWTPD9dsx6a2ounjJTVK7KYN6tyfL8c7PL/p7PnyYXq8w/PLB+1VNEuNErPLConctF/Io7i6O1Z+Ecq3cEnTPV9pK4nKTe6ODaptWjaaL+Pqfvn1Wd79mkbzqdJqlNhNO4a87o2qI7fbNF2zzuVjoi4iwNUoMbuskIgOCYnokJDIbbiWtT4eaeN82tdYPg+Y5dhIjQAAAAAAAAAAAAAAAAAAAA5NP2jDg/nyXSz+Z/5f0b0yzWJJvLoXi8SrDLMEZKtRJ25D+lUG9RT9meqdLV0qY41aZ5IrSESHhETssu6fdKntMtYohdswDWTbxnGZS/E1zuNqnsa+ncZuzqJZ48hXoxTsskIifiH3bxhXd7lOYpHwtC5dahLN7yKOVv4+qrapWE2XKpoO3MlYoxQcQ+7fug/PdKmt7XSp2LLOLtKlMtYoBbuskIgOCYnokMCtk/XSuUyXz7l0DgAAAAAAAAAAAAA69A9RYFSwaPkREQAAAABJRU5ErkJggg==" alt="">
+                </div>
+            </div>
+            <div class="sectiondiv2-2">
+                <h3>category</h3>
+                <h2>We Offer Best Services</h2>
+            </div>
+            <div class="sectiondiv2-3">
+                <div class="textarea2">
+                    <div class="imgwrap2-1">
+                        <img src="https://jadoo-tour.vercel.app/assets/icon1-05745f31.png" alt="">
+                    </div>
+                    <h3>Calculated Weather</h3>
+                    <p>Built Wicket longer admire do barton vantity itself do in it.</p>
+                </div>
+                <div class="textarea2">
+                    <div class="imgwrap2-1">
+                        <img src="https://jadoo-tour.vercel.app/assets/icon2-53b6a3ce.png" alt="">
+                    </div>
+                    <h3>Best flight</h3>
+                    <p>Engrossed listening. Park gate sell they west hard for the.</p>
+                </div>
+                <div class="textarea2">
+                    <div class="imgwrap2-1">
+                        <img src="https://jadoo-tour.vercel.app/assets/icon3-a06e9ca7.png" alt="">
+                    </div>
+                    <h3>Local events</h3>
+                    <p>Barton vantity itself do in it.Preferred to men it engrossed listening.</p>
+                </div>
+                <div class="textarea2">
+                    <div class="imgwrap2-1">
+                        <img src="https://jadoo-tour.vercel.app/assets/icon4-a00ceb28.png" alt="">
+                    </div>
+                    <h3>Customization</h3>
+                    <p>We deliver outsourced aviation services for military customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section3">
+        <div class="sectiondiv3">
+            <div class="textarea3">
+                <p>Top selling</p>
+                <h2>Top destinations</h2>
+            </div>
+            <div class="scroll">
+                <div class="cards">
+                    <div class="imgwrap3">
+                        <img src="https://jadoo-tour.vercel.app/assets/gallery3-37768c06.jpeg" alt="">
+                    </div>
+                    <div class="textarea3-1">
+                        <div>
+                        <h3>Paris, France</h3>
+                        <p><i class="ri-plane-fill"></i> 26 days trip</p></div>
+                        <div>15k</div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="cards">
+                    <div class="imgwrap3">
+                        <img src="https://jadoo-tour.vercel.app/assets/gallery4-83f11da4.jpeg" alt="">
+                    </div>
+                    <div class="textarea3-1">
+                        <div>
+                        <h3>New york, USA</h3>
+                        <p><i class="ri-plane-fill"></i> 8 days trip</p></div>
+                        <div>4.5k</div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="cards">
+                    <div class="imgwrap3">
+                        <img src="https://jadoo-tour.vercel.app/assets/gallery5-653a7a48.jpeg" alt="">
+                    </div>
+                    <div class="textarea3-1">
+                        <div>
+                        <h3>Warsaw, Poland</h3>
+                        <p><i class="ri-plane-fill"></i> 14 days trip</p></div>
+                        <div>3.9k</div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="cards">
+                    <div class="imgwrap3">
+                        <img src="https://jadoo-tour.vercel.app/assets/gallery6-e8aa92f7.jpeg" alt="">
+                    </div>
+                    <div class="textarea3-1">
+                        <div>
+                        <h3>Dubai, UAE</h3>
+                        <p><i class="ri-plane-fill"></i> 17 days trip</p></div>
+                        <div>9.2k</div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="cards">
+                    <div class="imgwrap3">
+                        <img src="https://jadoo-tour.vercel.app/assets/gallery1-d1f07d22.jpeg" alt="">
+                    </div>
+                    <div class="textarea3-1">
+                        <div>
+                        <h3>Rome, Italy</h3>
+                        <p><i class="ri-plane-fill"></i> 10 days trip</p></div>
+                        <div>5.42k</div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="cards">
+                    <div class="imgwrap3">
+                        <img src="https://jadoo-tour.vercel.app/assets/gallery2-e6c93f55.jpeg" alt="">
+                    </div>
+                    <div class="textarea3-1">
+                        <div>
+                        <h3>London, UK</h3>
+                        <p><i class="ri-plane-fill"></i> 12 days trip</p></div>
+                        <div>4.2k</div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section4">
+        <div class="sectiondiv4">
+            <div class="textarea4">
+                <h3>Easy and Fast</h3>
+                <h1>Book your next trip in 3 easy steps</h1>
+                <div class="textarea4-1">
+                    <div class="shape1"><i class="ri-book-open-fill"></i></div>
+                    <p>Choose Destination lorem ipsum dolor sit amet, consectetur adipiscing elit.Urna, tortor tempus.</p>
+                </div>
+                <div class="textarea4-1">
+                    <div class="shape2"><i class="ri-book-3-fill"></i></div>
+                    <p>Make Payment lorem ipsum dolor sit amet, consectetur adipiscing elit.Uma, totor tempus.</p>
+                </div>
+                <div class="textarea4-1">
+                    <div class="shape3"><i class="ri-flight-land-fill"></i></div>
+                    <p>Reach Airport on Selected Date lorem ipsum dolor sit amet.consectetur adipiscing elit.Uma totor tempus.</p>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="imgwrap4">
+                    <img src="https://jadoo-tour.vercel.app/assets/bookingImage1-75f22ade.jpeg" alt="">
+                </div>
+                <div class="textarea4-2">
+                    <h2>Trip to Greece</h2>
+                    <p>14-29 June | by Robbin Jobs</p>
+                    <div class="icons">
+                        <div><i class="ri-article-fill"></i></div>
+                        <div><i class="ri-layout-masonry-line"></i></div>
+                        <div><i class="ri-plane-line"></i></div>
+                    </div>
+                    <p>24 people going</p>
+                </div>
+                <div class="card2-1">
+                    <div class="imgwrap4-1">
+                        <img src="https://jadoo-tour.vercel.app/assets/bookingImage2-9a74622a.jpeg" alt="">
+                    </div>
+                    <div class="textarea4-3">
+                        <p>Ongoing</p>
+                        <h3>Trip to Rome</h3>
+                        <h4>40% Completed</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section5">
+        <div class="sectiondiv5">
+            <div class="textarea5">
+                <p>Testimonials</p>
+                <h1>What people say about Us.</h1>
+            </div>
+            <div class="card3">
+                <div class="textarea5-1"><p>"You did a fabulous job. There were no hitches. Thank you again for all your work planning this trip"</p></div>
+                <div class="iconarea">
+                    <div class="textarea5-2">
+                        <h4>Mike Taylor</h4>
+                        <p>Dubai, UAE</p>
+                    </div>
+                    <div class="imgwrap5">
+                        <img src="https://jadoo-tour.vercel.app/assets/profile4-f57b204f.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="section6">
+        <div class="sectiondiv6">
+            <div class="imgwrap6">
+                <img src="https://jadoo-tour.vercel.app/assets/partners1-6eb0c85b.png" alt="">
+            </div>
+            <div class="imgwrap6">
+                <img src="data:image/png;base64,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" alt="">
+            </div>
+            <div class="imgwrap6">
+                <img src="https://jadoo-tour.vercel.app/assets/partners3-77e4e7f5.png" alt="">
+            </div>
+            <div class="imgwrap6">
+                <img src="https://jadoo-tour.vercel.app/assets/partners1-6eb0c85b.png" alt="">
+            </div>
+            <div class="imgwrap6">
+                <img src="data:image/png;base64,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" alt="">
+            </div>
+            <div class="imgwrap6">
+                <img src="https://jadoo-tour.vercel.app/assets/partners3-77e4e7f5.png" alt="">
+            </div>
+    
+        </div>
+    </section>
+
+    <section class="section7">
+        <div class="textarea6">
+            <h2>Subscribe to get information, latest news and other interesting offers about Jadoo.</h2>
+            <div class="inputsect">
+                <input type="text" placeholder="Your Email">
+                <button type="button">Subscribe</button>
+            </div>
+            
+        </div>
+        <div class="block-1"></div>
+        <div class="block-2"></div>
+        <div class="crosses">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGoAAADCCAYAAAChblcUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANLSURBVHgB7d09ThtBGMbxd3YXUeUEJBJKRxlEFymYIj1t0sANEEfgBhzBdDS5gxUJoVShSlo3VE4TpQlivZOxBdJixhsZeT8e+/8rYIxHZuCRl1ey/OCswofd3Z0iSbYma7+5+e3q6uqPdZjaeX2aHluS7E9v3N+fObPhvL1Z1QONk+S1c25nsi6K4mf41OkfXO28Qc+8P5qusuzC8nw4b2NikEBQIghKBEGJICgRrjzSPr/XvQkfX02X3t96s9+xbU2OwmrnfTKCzyqKXjjz9sOtQVgPo/vC6J6VR9rKb+jc5JezFf9+zY3Caue18gg+y7nZffFHCKM7lz4R2Yb33+82Nn7E7kzv7t5Zmr6drAuzrz7LRrF9o9HolzVE7bw2Hp+HZ0Q/ep/3J+FZdThdF8VpuETeRPfl+Y2zCu/39j4+XmbGWfbl+vr61jpM7bzh71c/BPV4WTxweT6Yt5dLnwiCEkFQIghKBEGJqHw9qjwKNzrSvpDaeZ+M7mEENwAAAAAAAAAAAAAAAAAAAGDtVL6RjS6kei1yXrqQWrTIeXk3hwiCEkFQIghKBEGJoAupZss6L11INVvWebn0iaALqWbLOi9dSC1a5Lxc+kQQlAiCEkFQIghKBF1ILZLrbgIAAAAAAAAAAAAAAAAAAACWrvKNbOlnf5yY7U/W94Wd2aUbWoetbReSeet5Z0cPGy9ys6F1GF1IaB1BiSAoEQQlgqBEuPIIPqsw64X5fXt6w9vAufjU1+TovrZdSOUR/NnjPL3R8xbX5OhOFxI6LRvndp6l1o/d6RM7Cc+qw8m6cHaajO0mti//G/96HehCij3QJ993j5fFwg7ySzewDqMLCa0jKBEEJYKgRBCUiOr/zVEa3ZscwV+KLiQAAAAAAAAAAAAAAAAAAABATeUb2Va5W6gLltaFtMrdQl1AF9IKIigRBCWCoEQQlAi3rt1Ccl1I69otZHQhoQ7ZunYLWUMa6UJa5W6hLqALaQURlAiCEkFQIghKROXrUXQL1YsuJAAAAAAAAAAAAAAAAAAAAIAupBbRhWR0IaElBCWCoEQQlAiCEkEXUs3oQvoPupDQCrqQakYXUgRdSGgdQYkgKBEEJYKgRNCF1KJFzvsP+J1rUhGPHVcAAAAASUVORK5CYII=" alt="">
+        </div>
+    </section>
+
+    <section class="section8">
+        <div class="sectiondiv8">
+            <div class="logosect">
+                <div class="forlogo">
+                    <a href="#" class="logo">
+                        <img src="data:image/png;base64,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" alt="Logo">
+                    </a>
+                </div>
+                <p>Book your trip in minutes, get full control for much longer.</p>
+            </div>
+            <div class="linkspart">
+                <div class="textarea7">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#">Destination</a></li>
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Flights</a></li>
+                        <li><a href="#">Bookings</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Signup</a></li>
+                    </ul>
+                </div>
+                <div class="textarea7">
+                    <h4>Contacts</h4>
+                    <ul>
+                        <li><a href="#">FAQS</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Policies</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="textarea7">
+                    <h4>More</h4>
+                    <ul>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Airline</a></li>
+                        <li><a href="#">Airline Fees</a></li>
+                        <li><a href="#">Low Fare Tips</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="googlepart">
+                <div class="iconarea2">
+                    <div class="iconss"><i class="ri-facebook-circle-fill"></i></div>
+                    <div class="iconss"><i class="ri-instagram-fill"></i></div>
+                    <div class="iconss"><i class="ri-twitter-fill"></i></div>
+                </div>
+                <p>Discover our app</p>
+                <div class="imgwrap7">
+                    <img src="https://jadoo-tour.vercel.app/assets/appdownload-3f897622.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div><p>Copyright 2023. Jadoo.com. All rights reserved.</p></div>
+    </footer>
+</body>
+</html>

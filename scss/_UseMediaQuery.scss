@@ -1,0 +1,635 @@
+@mixin mediaQuery($args...){
+    @if length($args)==1{
+        @media screen and (max-width: nth($args, 1)){
+            @content;
+        }
+    }
+    @if length($args)==2{
+        @media screen and (max-width: nth($args, 1)) and (min-width: nth($args, 2)){
+            @content;
+        }
+    }
+
+}
+@mixin body{
+    // overflow-x: hidden;
+}
+
+// i-pad view
+@mixin Navbar-i{
+    width: 100%;
+    padding-inline: 2rem;
+    ul{
+        gap: 1.5rem;
+    }
+    .buttons{
+        button{
+            padding: 10px 25px;
+        }
+    }
+
+}
+// mobile view
+@mixin Navbar-p{
+    width: 100%;
+    padding-inline: 1rem;
+    height: 70px;
+    ul{
+        gap: 1.5rem;
+    }
+    .buttons{
+        button{
+            padding: 10px 25px;
+        }
+    }
+}
+
+// i-pad view
+@mixin Section1-i{
+    padding-inline: 2rem;
+    height: 50vh;
+    padding-top: 1.5rem;
+    padding-bottom: 0rem;
+    // background-color: gray;
+
+    .sectiondiv1{
+        gap: 4rem;
+        padding-bottom: 2rem;
+        padding-top: 5.5rem;
+
+        .textarea1{
+            // margin-top: 1.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            width: 400px;
+
+        }
+        .textarea1 h2{
+            font-size: 0.95rem;
+            letter-spacing: 0.8px;
+        }
+        .textarea1 h1{
+            font-size: 2.7rem;
+            margin-top: 0rem;
+            font-weight: 300;
+        }
+        .textarea1 p{
+            font-size: 0.85rem;
+            letter-spacing: 0.9px;
+            margin-top: 0rem;
+        }
+        .cta{
+            gap: 2rem;
+
+            button{
+                padding: 17px 25px;
+                font-size: 0.85rem;
+            }
+            .anim{
+                gap: 1.2rem;
+                font-size: 0.85rem;
+                div{
+                    width: 45px;
+                    height: 45px;
+                    font-size: 1rem;
+                    &::before{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+        .imgwrap1{
+            width: 300px;
+        }
+    }
+}
+
+// mobile view
+@mixin Section1-p{
+    padding-inline: 1.5rem;
+    height: 105vh;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    // background-color: gray;
+
+    .sectiondiv1{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+        padding-top: 0rem;
+
+        .textarea1{
+            // margin-top: 1.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            width: auto;
+            margin-top: 0rem;
+
+        }
+        .textarea1 h2{
+            font-size: 0.95rem;
+            letter-spacing: 0.8px;
+        }
+        .textarea1 h1{
+            font-size: 2.2rem;
+            margin-top: 0rem;
+            font-weight: 300;
+        }
+        .textarea1 p{
+            font-size: 0.85rem;
+            letter-spacing: 0.9px;
+            margin-top: 0rem;
+        }
+        .cta{
+            gap: 2rem;
+
+            button{
+                padding: 17px 25px;
+                font-size: 0.85rem;
+            }
+            .anim{
+                gap: 1.2rem;
+                font-size: 0.85rem;
+                div{
+                    width: 45px;
+                    height: 45px;
+                    font-size: 1rem;
+                    &::before{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+        .imgwrap1{
+            width: 300px;
+            height: 300px;
+            img{
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+
+// i-pad view
+@mixin Section2-i{
+    padding-inline: 2rem;
+    height: 80vh;
+    // background-color: gray;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    .sectiondiv2{
+        .sectiondiv2-1{
+            height: 140px;
+            div{
+                width: 100px;
+                img{
+                    object-fit: contain;
+                }
+                
+            }
+        }
+        .sectiondiv2-2{
+            gap: 0.8rem;
+            h3{
+                font-size: 0.8rem;
+            }
+            h2{
+                font-size: 1.95rem;
+            }
+        }
+        .sectiondiv2-3{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 1rem;
+            padding: 1rem;
+            height: auto;
+            .textarea2{
+                height: 300px;
+            }
+        }
+    }
+}
+
+// mobile view
+@mixin Section2-p{
+    padding-inline: 1.5rem;
+    height: 205vh;
+    // background-color: gray;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    .sectiondiv2{
+        .sectiondiv2-1{
+            height: 140px;
+            div{
+                width: 100px;
+                img{
+                    object-fit: contain;
+                }
+                
+            }
+        }
+        .sectiondiv2-2{
+            gap: 0.8rem;
+            h3{
+                font-size: 0.8rem;
+                text-align: center;
+            }
+            h2{
+                font-size: 1.5rem;
+                text-align: center;
+                font-weight: 500;
+            }
+        }
+        .sectiondiv2-3{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 1rem;
+            padding: 1rem;
+            padding-top: 2rem;
+            height: auto;
+            .textarea2{
+                height: 300px;
+                box-shadow: 0 0 8px rgba(36,36,36,0.2);
+                &:hover{
+                    box-shadow: 0 0 20px rgba(36,36,36,0.4) ;
+                }
+            }
+        }
+    }
+}
+
+
+// i-pad view
+@mixin Section3-i{
+    height: 50vh;
+    padding-inline: 2rem;
+}
+
+// mobile view
+@mixin Section3-p{
+    height: 75vh;
+    padding-inline: 1.5rem;
+    .textarea3{
+        gap: 0.8rem;
+        p{
+            font-size: 1rem;
+            font-weight: 100;
+        }
+        h2{
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+        }
+    }
+    .scroll{
+        padding-block: 0.8rem;
+        gap: 2rem;
+        height: 350px;
+        .cards{
+            width: 290px;
+            .textarea3-1{
+                gap: 6rem;
+            }
+        }
+    }
+}
+
+
+// i-pad view
+@mixin Section4-i{
+    padding-inline: 2rem;
+    height: 50vh;
+    padding-block: 2rem;
+    margin-top: 1rem;
+    .sectiondiv4{
+        gap: 2rem;
+        .textarea4{
+            gap: 1.5rem;
+            width: 500px;
+            .textarea4-1{
+                gap: 0.75rem;
+                .shape1, .shape2, .shape3{
+                    width: 60px;
+                    height: 30px;
+                }
+            }
+        }
+        .card2{
+            .card2-1{
+                width: 200px;
+                right: -8%;
+                gap: 0.4rem;
+                .imgwrap4-1{
+                    width: 60px;
+                    height: 60px;
+                }
+                .textarea4-3{
+                    gap: 0.3rem;
+                }
+            }
+        }
+    }
+}
+
+// mobile view
+@mixin Section4-p{
+    padding-inline: 1.5rem;
+    height: 120vh;
+    padding-block: 2rem;
+    margin-top: 1rem;
+    // background-color: gray;
+    .sectiondiv4{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+        .textarea4{
+            gap: 1.5rem;
+            width: auto;
+            h1{
+                font-size: 2.5rem;
+            }
+            .textarea4-1{
+                gap: 0.75rem;
+                .shape1, .shape2, .shape3{
+                    width: 60px;
+                    height: 30px;
+                }
+            }
+        }
+        .card2{
+            width: auto;
+            .card2-1{
+                width: 200px;
+                right: -8%;
+                gap: 0.4rem;
+                .imgwrap4-1{
+                    width: 60px;
+                    height: 60px;
+                }
+                .textarea4-3{
+                    gap: 0.3rem;
+                }
+            }
+        }
+    }
+}
+
+
+// i-pad view
+@mixin Section5-i{
+    height: 28vh;
+    padding-inline: 2rem;
+    padding-block: 1.5rem;
+    // background-color: gray;
+    .sectiondiv5{
+        padding-right: 0rem;
+        .textarea5{
+            p{
+                font-size: 1rem;
+            }
+            h1{
+                font-weight: 100;
+                font-size: 2.5rem;
+            }
+        }
+        .card3{
+            gap: 0.7rem;
+            align-self: first baseline;
+            .iconarea{
+                gap: 1.5rem;
+                .textarea5-2{
+                    gap: 1.2rem;
+                }
+                .imgwrap5{
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+}
+
+// mobile view
+@mixin Section5-p{
+    height: 60vh;
+    padding-inline: 1.5rem;
+    padding-block: 1.5rem;
+    margin-top: 5rem;
+    // background-color: gray;
+    .sectiondiv5{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        padding-right: 0rem;
+        .textarea5{
+            p{
+                font-size: 1rem;
+            }
+            h1{
+                font-weight: 550;
+                font-size: 2.3rem;
+            }
+        }
+        .card3{
+            width: 100%;
+            gap: 0.7rem;
+            align-self: first baseline;
+            .iconarea{
+                gap: 1.5rem;
+                .textarea5-2{
+                    gap: 1.2rem;
+                }
+                .imgwrap5{
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+}
+
+
+// i-pad view
+@mixin Section6-i{
+    padding-inline: 2rem;
+    height: 10vh;
+}
+
+// mobile view
+@mixin Section6-p{
+    padding-inline: 1.5rem;
+    height: 20vh;
+    // background-color: gray;
+    .sectiondiv6{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 2rem;
+        overflow: scroll;
+        padding-left: 0.5rem;
+
+        .imgwrap6{
+            height: 100%;
+            width: 180px;
+            img{
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+
+// i-pad view
+@mixin Section7-i{
+    height: 30vh;
+    .textarea6{
+        width: 900px;
+        gap: 2.5rem;
+        h2{
+            font-size: 1.5rem;
+        }
+        .inputsect{
+            input{
+                width: 270px;
+            }
+        }
+    }
+    .block-1, .block-2{
+        height: 200px;
+        width: 250px;
+    }
+    .crosses{
+        height: 100px;
+        bottom: -12%;
+    }
+}
+
+// mobile view
+@mixin Section7-p{
+    height: 60vh;
+    .textarea6{
+        width: 900px;
+        gap: 2.3rem;
+        h2{
+            font-size: 1.4rem;
+        }
+        .inputsect{
+            input{
+                width: 100%;
+                margin-bottom: 0.8rem;
+            }
+            button{
+                width: 100%;
+            }
+        }
+    }
+    .block-1, .block-2{
+        height: 300px;
+        width: 150px;
+    }
+    .crosses{
+        height: 100px;
+        bottom: -12%;
+    }
+}
+
+
+// i-pad view
+@mixin Section8-i{
+    height: 45vh;
+    padding-inline: 2rem;
+    padding-block: 1.5rem;
+    .logosect{
+        width: 180px;
+        margin-right: 0.8rem;
+    }
+    .linkspart{
+        gap: 3rem;
+        .textarea7{
+            gap: 1.2rem;
+            ul{
+                li{
+                    margin-bottom: 0.3rem;
+                }
+            }
+        }
+    }
+    .googlepart{
+        .iconarea2{
+            gap: 0.8rem;
+            div{
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+// mobile view
+@mixin Section8-p{
+    height: 130vh;
+    padding-inline: 1.5rem;
+    padding-block: 2.5rem;
+    // background-color: cyan;
+    .sectiondiv8{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .logosect{
+        width: 180px;
+        margin-right: 0.8rem;
+        align-self: flex-start;
+    }
+    .linkspart{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-self: flex-start;
+        .textarea7{
+            gap: 1.2rem;
+            ul{
+                li{
+                    margin-bottom: 0.3rem;
+                }
+            }
+        }
+    }
+    .googlepart{
+        align-self: flex-start;
+        .iconarea2{
+            gap: 0.8rem;
+            div{
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+
+// i-pad view
+@mixin Footer-i{}
+
+// mobile view
+@mixin Footer-p{
+    padding-inline: 2rem;
+    div{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            font-size: 0.8rem;
+            letter-spacing: 0px;
+        }
+    }
+}
+

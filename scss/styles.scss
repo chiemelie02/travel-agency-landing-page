@@ -1,0 +1,103 @@
+//variables
+@import "./variables";
+@import "./base";
+@import "./mixins";
+@import "./UseMediaQuery";
+
+body{
+    @include mediaQuery(767px){
+        @include body
+    }
+}
+
+header{
+    @include NavBar($primarycolor, $buttoncolor1, $textcolor1);
+    @include mediaQuery(1024px, 768px){
+        @include Navbar-i
+    }
+    @include mediaQuery(767px){
+        @include Navbar-p
+    }
+}
+.section1{
+    @include Section1($primarycolor, $buttoncolor1, $textcolor1, $textcolor2);
+    @include mediaQuery(1024px, 768px){
+        @include Section1-i
+    }
+    @include mediaQuery(767px){
+        @include Section1-p
+    }
+    
+}
+.section2{
+    @include Section2($primarycolor, $textcolor1);
+    @include mediaQuery(1024px, 768px){
+        @include Section2-i
+    }
+    @include mediaQuery(767px){
+        @include Section2-p
+    }
+}
+.section3{
+    @include Section3($primarycolor, $textcolor1);
+    @include mediaQuery(1024px, 768px){
+        @include Section3-i
+    }
+    @include mediaQuery(767px){
+        @include Section3-p
+    }
+}
+.section4{
+    @include Section4($primarycolor, $textcolor1);
+    @include mediaQuery(1024px, 768px){
+        @include Section4-i
+    }
+    @include mediaQuery(767px){
+        @include Section4-p
+    }
+}
+.section5{
+    @include Section5($primarycolor, $textcolor1);
+    @include mediaQuery(1024px, 768px){
+        @include Section5-i
+    }
+    @include mediaQuery(767px){
+        @include Section5-p
+    }
+}
+.section6{
+    @include Section6($primarycolor, $textcolor1);
+    @include mediaQuery(1024px, 768px){
+        @include Section6-i
+    }
+    @include mediaQuery(767px){
+        @include Section6-p
+    }
+}
+.section7{
+    @include Section7($textcolor1, $buttoncolor2);
+    @include mediaQuery(1024px, 768px){
+        @include Section7-i
+    }
+    @include mediaQuery(767px){
+        @include Section7-p
+    }
+}
+.section8{
+    @include Section8($primarycolor, $textcolor1);
+    @include mediaQuery(1024px, 768px){
+        @include Section8-i
+    }
+    @include mediaQuery(767px){
+        @include Section8-p
+    }
+}
+footer{
+    @include Footer(#232396c2, $primarycolor);
+    @include mediaQuery(1024px, 768px){
+        @include Footer-i
+    }
+    @include mediaQuery(767px){
+        @include Footer-p
+    }
+}

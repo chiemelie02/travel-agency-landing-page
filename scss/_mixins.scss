@@ -1,0 +1,958 @@
+// mixins
+@import "./variables";
+
+// Navbar Designs
+@mixin NavBar($background, $buttoncolor, $textcolor){
+    padding-inline: $inline;
+    width: 100%;
+    height: 100px;
+    background-color: $background;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    // background-image: linear-gradient(to the right, white,#af3030);
+
+    .logo img{
+        width: 6rem;
+        height: 2.5rem;
+    }
+    .forlogo{
+        width: 280px;
+        // background-color: red;
+    }
+    .services{
+        margin-left: 1rem;
+    }
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 2.6rem;
+        li>a{
+            
+            &::before{
+                content: "";
+                position: absolute;
+                overflow: hidden;
+                top: -100%;
+                left: 0;
+                transition: 500ms ease;
+                // width: 5px;
+                // height: 20px;
+                
+            }
+            &:hover::before{
+                top: 0;
+                left: -10%;
+                width: 3px;
+                height: 17px;
+                border-radius: 2px;
+                background-color: $buttoncolor;
+    
+            }
+
+        }
+    }
+    a{
+        text-decoration: none;
+        font-size: 1rem;
+        color: $textcolor;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+        z-index: 4;
+        
+    }
+    .buttons button{
+        padding: 10px 32px;
+        font-size: 1rem;
+        color: $textcolor;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+    .buttons .button1{
+        background-color: transparent;
+        position: relative;
+        z-index: 4;
+        
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: -100%;
+            transition: 600ms ease-in;
+        }
+        &:hover::before{
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $buttoncolor;
+            color: black;
+            border-bottom: 2px solid black;
+        }
+    }
+    .buttons .button2{
+        border: 2px solid black;
+        background-color: transparent;
+    }
+    .buttons .option{
+        font-size: 1rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding: 10px;
+    }
+}
+
+// Section designs
+
+@mixin Section1($background, $buttoncolor, $textcolor1, $textcolor2){
+    width: 100%;
+    height: $sectheight;
+    // background-color:$background;
+    padding-inline: $inline;
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+
+    .sectiondiv1{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12rem;
+    }
+    .textarea1{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // background-color: brown;
+        margin-top: 1.9rem;
+        // padding-bottom: 0.7rem;
+    }
+    .textarea1 h2{
+        font-size: 1.1rem;
+        font-weight: 100;
+        letter-spacing: 1px;
+        color: $textcolor2;
+    }
+    .textarea1 h1{
+        font-size: 4rem;
+        font-weight: 100;
+        color: $textcolor1;
+        margin-top: 1.3rem;
+    }
+    .textarea1 p{
+        font-size: 1rem;
+        color: $textcolor1;
+        letter-spacing: 0.8px;
+        margin-top: 1.3rem;
+    }
+    .cta{
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        margin-top: 1.3rem;
+
+        button{
+            padding: 14.5px 32px;
+            font-size: 1rem;
+            letter-spacing: 0.8px;
+            font-weight: 100;
+            color: white;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: $buttoncolor;
+            border-radius: 8px;
+        }
+        .anim{
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 1rem;
+            letter-spacing: 0.8px;
+        }
+        .anim>div{
+            width: 60px;
+            height: 60px;
+            background-color: $textcolor2;
+            color: white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            position: relative;
+            font-size: 1.1rem;
+    
+            &::before{
+                content: "";
+                width: 40px;
+                height: 40px;
+                background-color: $textcolor2;
+                border-radius: 50%;
+                position: absolute;
+                z-index: -1;
+                animation-name: expand;
+                animation-duration: 1s;
+                animation-timing-function: ease-out;
+                animation-iteration-count: infinite;
+                animation-direction: normal;
+            }
+        }
+    
+    }
+    @keyframes expand{
+        0%{
+            transform: scale(0);
+            opacity: 1;
+        }
+        50%{
+            transform: scale(2.5);
+            opacity: 0.3;
+        }
+        100%{
+            transform: scale(3);
+            opacity: 0;
+        }
+    }
+    
+
+    .imgwrap1{
+        height: 100%;
+        width: 400px;
+        overflow: hidden;
+    }
+    .imgwrap1 img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@mixin Section2($background, $textcolor){
+    // height: $sectheight;
+    width: 100%;
+    padding-inline: $inline;
+    margin-top: 2rem;
+    margin-bottom: 2.7rem;
+    // background-color: $background;
+    // overflow-y: hidden;
+
+    .sectiondiv2{
+        width: 100%;
+        height: 100%;
+        // background-color: gray;
+
+        .sectiondiv2-1 {
+            width: 100%;
+            height: 170px;
+            // background-color: brown;
+            display: flex;
+            justify-content: flex-end;
+
+            >div{
+                height: 100%;
+                width: 200px;
+                // background-color: brown;
+                overflow: hidden;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .sectiondiv2-2{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            // margin-bottom: 5rem;
+            h3{
+                text-transform: uppercase;
+                font-size: 1.1rem;
+                font-weight: 100;
+                color: $textcolor;
+                letter-spacing: 0.8px;
+            }
+            h2{
+                font-size: 2.15rem;
+                font-weight: 600;
+                color: $textcolor;
+                letter-spacing: 1px;
+            }
+        }
+
+        .sectiondiv2-3{
+            width: 100%;
+            height: 400px;
+            background-color: $background;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .textarea2{
+            // background-color: brown;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            // width: 300px;
+            height: 280px;
+            border-radius: 15px;
+            background-color: $background;
+            position: relative;
+            transition: ease 200ms;
+            padding: 1rem;
+        
+
+            .imgwrap2-1{
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                position: relative;
+                
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                background-color: $textcolor2;
+                top: 20%;
+                right: 35%;
+                border-top-left-radius: 40%;
+                border-bottom-right-radius: 40%;
+                opacity: 0.5;
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                background-color: $textcolor2;
+                bottom: 10%;
+                left: 10%;
+                border-top-left-radius: 30%;
+                border-bottom-right-radius: 30%;
+                z-index: -1;
+                transition: 300ms ease;
+            }
+            &:hover{
+                box-shadow: 0 10px 10px rgba(36,36,36,0.35);
+                cursor: pointer;
+
+                &::after{
+                    bottom: -10%;
+                    left: -8%;
+                }
+            }
+
+            h3{
+                font-size: 1.1rem;
+                font-weight: 600;
+                letter-spacing: 0.8px;
+                color: $textcolor;
+            }
+            p{
+                font-size: 0.95rem;
+                letter-spacing: 0.8px;
+                color: $textcolor;
+                text-align: center;
+            }
+
+        }
+
+    }
+
+}
+@mixin Section3($background, $textcolor){
+    
+        width: 100%;
+        height: $sectheight;
+        padding-inline: $inline;
+        background-color: $background;
+        .sectiondiv3{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .textarea3{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            p{
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+                color: $textcolor;
+                font-weight: normal;
+            }
+            h2{
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+                color: $textcolor;
+                font-weight: 600;
+                margin-bottom: 3.5rem;
+            }
+        }
+        .scroll{
+            overflow: scroll;
+            width: 100%;
+            height: 370px;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            gap: 3rem;
+            padding: 1rem;
+
+            .cards{
+                width: 340px;
+                height: 100%;
+                border-radius: 5px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+                cursor: pointer;
+                box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+                
+                .imgwrap3{
+                    width: 100%;
+                    height: 65%;
+                    overflow: hidden;
+                    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: 1s all;
+                        &:hover{
+                            transform: scale(1.3);
+                        }
+                    }
+                }
+                .textarea3-1{
+                    display: flex;
+                    align-items: center;
+                    // background-color: gray;
+                    padding-inline: 1rem;
+                    gap: 9rem;
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 0.8rem;
+                        // gap: 1rem;
+                        h3{
+                            font-size: 1rem;
+                            font-weight: 600;
+                            letter-spacing: 1px;
+                            margin-bottom: 1.3rem;
+                        }
+                        p{
+                            font-size: 0.85rem;
+                            font-weight: 100;
+                            letter-spacing: 0.8px;
+                            .ri-plane-fill{
+                                font-weight: 900;
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+
+                }
+            
+            }
+            
+        
+        }
+        .scroll::-webkit-scrollbar{
+            display: none;
+        }
+    
+
+}
+@mixin Section4($background, $textcolor){
+    height: $sectheight;
+    width: 100%;
+    padding-inline: $inline;
+    padding-block: $inline;
+    background-color: $background;
+    .sectiondiv4{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        // align-items: center;
+        gap: 6rem;
+
+        .textarea4{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 600px;
+            // background-color: brown;
+            color: $textcolor;
+            h3{
+                font-weight: 100;
+                letter-spacing: 0.9px;
+            }
+            h1{
+                font-size: 3rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+
+            .textarea4-1{
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+
+                .shape1{
+                    width: 50px;
+                    height: 40px;
+                    border-radius: 8px;
+                    background-color: $buttoncolor1;
+                    color: $background;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .shape2{
+                    width: 50px;
+                    height: 40px;
+                    border-radius: 8px;
+                    background-color: $textcolor2;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .shape3{
+                    width: 60px;
+                    height: 40px;
+                    border-radius: 8px;
+                    background-color: $textcolor;
+                    color: $background;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        .card2{
+            padding: 1rem;
+            width: 400px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // justify-content: center;
+            gap: 2rem;
+            position: relative;
+            margin-top: 4rem;
+            background-color: $background;
+            border-radius: 10px;
+            box-shadow: 0px 20px 30px rgba(55, 170, 236, 0.6);
+            .imgwrap4{
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
+                border-radius: 10px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .textarea4-2{
+                display: flex;
+                flex-direction: column;
+                align-self: flex-start;
+                gap: 0.8rem;
+                color: $textcolor;
+                h2{
+                    font-size: 1.1rem;
+                }
+                .icons{
+                    display: flex;
+                    align-items: center;
+                    // justify-content: center;
+                    gap: 1.5rem;
+                }
+                .icons>div{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: #e6e5e5;
+                    display: grid;
+                    place-items: center;
+                }
+            }
+
+            .card2-1{
+                position: absolute;
+                height: 100px;
+                width: 250px;
+                bottom: 2rem;
+                right: -5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 0.8rem;
+                gap: 1rem;
+                background-color: $background;
+                padding: 1rem;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+
+                .imgwrap4-1{
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .textarea4-3{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.6rem;
+                }
+            }
+        }
+
+    }
+
+}
+
+@mixin Section5($background, $textcolor){
+    height: 70vh;
+    width: 100%;
+    padding-inline: $inline;
+    padding-block: $inline;
+    background-color: $background;
+    // background-color: gray;
+    .sectiondiv5{
+        width: 100%;
+        height: 100%;
+        background-color: $background;
+        display: flex;
+        gap: 1rem;
+        color: $textcolor;
+        padding-right: 0.5rem;
+        .textarea5{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            // background-color: brown;
+            p{
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+            h1{
+                font-size: 3rem;
+                letter-spacing: 1px;
+
+            }
+
+        }
+        .card3{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding-inline: 1rem;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+            height: 200px;
+            width: 45%;
+            align-self: last baseline;
+            margin-bottom: 1rem;
+
+            .textarea5-1 p{
+                font-size: 0.9rem;
+                font-weight: 100;
+                letter-spacing: 0.8px;
+            }
+            .iconarea{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2rem;
+                .textarea5-2{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    h4{
+                        font-size: 1.1rem;
+                        letter-spacing: 0.8px;
+                    }
+                    p{
+                        font-size: 0.9rem;
+                        font-weight: 100;
+                        letter-spacing: 0.8px;
+                    }
+                }
+                .imgwrap5{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@mixin Section6($background, $textcolor){
+    height: 30vh;
+    width: 100%;
+    padding-inline: $inline;
+    // padding-block: $inline;
+    background-color: $background;
+    // background-color: gray;
+
+    .sectiondiv6{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        height: 100%;
+        width: 100%;
+        .imgwrap6{
+            // height: 100%;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@mixin Section7($textcolor, $btncolor){
+    height: 60vh;
+    width: 100%;
+    background-color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .textarea6{
+        display: flex;
+        flex-direction: column;
+        // background-color: brown;
+        align-items: center;
+        gap: 3rem;
+        width: 800px;
+        padding: 1.5rem;
+        h2{
+            font-weight: 100;
+            font-size: 2rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .inputsect{
+            z-index: 2;
+            input{
+                width: 370px;
+                padding: 15px 30px;
+                border: none;
+                outline: none;
+                font-size: 0.9rem;
+                color: $textcolor;
+                border-radius: 10px;
+            }
+            button{
+                padding: 15px 30px;
+                font-size: 0.9rem;
+                border: none;
+                outline: none;
+                background-color: $btncolor;
+                color: white;
+                border-radius: 10px;
+            }
+        }
+    }
+    .block-1{
+        height: 250px;
+        width: 400px;
+        background-color: $textcolor;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: 0.2;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .block-2{
+        height: 250px;
+        width: 400px;
+        background-color: $textcolor;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0.2;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    .crosses{
+        height: 150px;
+        width: 80px;
+        overflow: hidden;
+        position: absolute;
+        bottom: -5rem;
+        right: 2rem;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+}
+@mixin Section8($background, $textcolor){
+    height: 73vh;
+    background-color: $background;
+    padding-inline: $inline;
+    padding-block: 4rem;
+
+    .sectiondiv8{
+        width: 100%;
+        height: 100%;
+        // background-color: $background;
+        display: flex;
+        justify-content: space-between;
+        // gap: 6rem;
+        align-items: center;
+    }
+    .logosect{
+        // background-color: brown;
+        height: 200px;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .logo img{
+            width: 6rem;
+            height: 2.5rem;
+        }
+        .forlogo{
+            width: 280px;
+        }
+        p{
+            font-size: 0.95rem;
+            letter-spacing: 0.8px;
+            color: $textcolor;
+        }
+        
+    }
+    .linkspart{
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem;
+        .textarea7{
+            display: flex;
+            flex-direction: column;
+            // width: 100px;
+            // background-color: brown;
+            // align-items: center;
+            gap: 1.5rem;
+            h4{
+                font-size: 1.3rem;
+                color: $textcolor;
+                letter-spacing: 0.8px;
+                font-weight: 100;
+                // text-align: center;
+            }
+            ul{
+                list-style: none;
+                // text-align: center;
+                li{
+                    text-decoration: none;
+                    margin-bottom: 0.5rem;
+                    a{
+                        text-decoration: none;
+                        color: $textcolor;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+    .googlepart{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+        // background-color: cyan;
+        .iconarea2{
+            display: flex;
+            gap: 1rem;
+            div{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 0.6px solid $textcolor;
+                color: $textcolor;
+                display: grid;
+                place-items: center;
+            }
+        }
+        p{
+            letter-spacing: 0.8px;
+        }
+        .imgwrap7{
+            width: 100px;
+            height: 40px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+}
+@mixin Footer($background, $textcolor){
+    width: 100%;
+    height: 75px;
+    background-color: $background;
+    display: grid;
+    place-items: center;
+    p{
+        font-size: 0.9rem;
+        color: $textcolor;
+        letter-spacing: 0.8px;
+        font-weight: 100;
+    }
+    
+}
